@@ -28,8 +28,8 @@ public class ProfileController {
 	
 	@PostMapping
 	public ResponseEntity<ProfileModel> createProfile(@Valid @RequestBody ProfileModel profile) {
-		ProfileModel createdProfile = profileService.createOrUpdateProfile(profile);
 		
+		ProfileModel createdProfile = profileService.createOrUpdateProfile(profile);
 		return ResponseEntity.ok(createdProfile);
 	}
 	
@@ -39,7 +39,6 @@ public class ProfileController {
 			@Valid @RequestBody ProfileModel profile) {
 		
 		ProfileModel updatedProfile = profileService.createOrUpdateProfile(profile);
-		
 		return ResponseEntity.ok(updatedProfile);
 	}
 	
