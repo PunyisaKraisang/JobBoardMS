@@ -12,6 +12,7 @@ public class ModelUtil {
 	public static ProfileEntity parse(ProfileModel from) {
 		return new ProfileEntity(
 				from.getProfileId(), 
+				from.getUsername(),
 				from.getFirstName(), 
 				from.getLastName(), 
 				from.getEmail(), 
@@ -21,6 +22,7 @@ public class ModelUtil {
 	public static ProfileModel parse(ProfileEntity from) {
 		return new ProfileModel(
 				from.getProfileId(), 
+				from.getUsername(),
 				from.getFirstName(), 
 				from.getLastName(), 
 				from.getEmail(), 

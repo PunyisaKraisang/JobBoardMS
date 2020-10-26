@@ -1,11 +1,16 @@
 package com.springboot.model;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class ProfileModel {
 	
 	private long profileId;
+	
+	@Size(min = 3, max = 15)
+	@Pattern(regexp = "[A-Za-z0-9_]+")
+	private String username;
 	
 	@Size(min = 3, max = 15)
 	private String firstName;
@@ -22,8 +27,9 @@ public class ProfileModel {
 	public ProfileModel() {
 	}
 
-	public ProfileModel(long profileId, String firstName, String lastName, String email, String phone) {
+	public ProfileModel(long profileId, String username, String firstName, String lastName, String email, String phone) {
 		this.profileId = profileId;
+		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -36,6 +42,14 @@ public class ProfileModel {
 
 	public final void setProfileId(long profileId) {
 		this.profileId = profileId;
+	}
+	
+	public final String getUsername() {
+		return username;
+	}
+
+	public final void setUsername(String username) {
+		this.username = username;
 	}
 
 	public final String getFirstName() {

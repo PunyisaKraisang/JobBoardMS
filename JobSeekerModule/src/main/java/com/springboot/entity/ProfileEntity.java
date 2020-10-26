@@ -23,6 +23,9 @@ public class ProfileEntity {
 	)
 	private long profileId;
 	
+	@Column(name = "username", unique = true)
+	private String username;
+	
 	@Column(name = "first_name")
 	private String firstName;
 
@@ -38,8 +41,9 @@ public class ProfileEntity {
 	public ProfileEntity() {
 	}
 
-	public ProfileEntity(long profileId, String firstName, String lastName, String email, String phone) {
+	public ProfileEntity(long profileId, String username, String firstName, String lastName, String email, String phone) {
 		this.profileId = profileId;
+		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -52,6 +56,14 @@ public class ProfileEntity {
 
 	public final void setProfileId(long profileId) {
 		this.profileId = profileId;
+	}
+	
+	public final String getUsername() {
+		return username;
+	}
+
+	public final void setUsername(String username) {
+		this.username = username;
 	}
 
 	public final String getFirstName() {
