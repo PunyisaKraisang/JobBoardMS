@@ -20,7 +20,7 @@ import com.springboot.model.SharedProfileModel;
 @EnableKafka
 public class KafkaConfig {
 	
-	@Value("${kafka.bootstrap.servers}")
+	@Value("${spring.kafka.bootstrap-servers}")
 	private String bootstrapServers;
 	
 	@Bean

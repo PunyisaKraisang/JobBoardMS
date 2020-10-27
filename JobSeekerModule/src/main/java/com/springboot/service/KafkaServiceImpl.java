@@ -11,7 +11,7 @@ import com.springboot.model.SharedProfileModel;
 @Service
 public class KafkaServiceImpl implements KafkaService {
 	
-	@Value("${kafka.profile.topic}")
+	@Value("${spring.kafka.profile.topic}")
 	private String topic;
 
 	@Autowired
